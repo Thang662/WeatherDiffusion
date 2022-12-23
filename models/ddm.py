@@ -165,7 +165,7 @@ class DenoisingDiffusion(object):
                 loss = noise_estimation_loss(self.model, x, t, e, b)
 
                 if self.step % 10 == 0:
-                    print(f"step: {self.step}, loss: {loss.item()}, data time: {data_time / (i+1)}")
+                    # print(f"step: {self.step}, loss: {loss.item()}, data time: {data_time / (i+1)}")
 
                     print('{} Epoch [{:03d}/{:03d}], Step [{:04d}/{:04d}], Loss: {:0.4f}'.
                                     format(datetime.now(), 
@@ -193,7 +193,7 @@ class DenoisingDiffusion(object):
                         'ema_helper': self.ema_helper.state_dict(),
                         'params': self.args,
                         'config': self.config
-                    }, filename=os.path.join(self.config.data.data_dir, 'ckpts', self.config.data.dataset + '_ddpm'))
+                    }, filename=os.path.join('/kaggle/working', self.config.data.dataset + '_ddpm'))
 
     def sample_image(self, x_cond, x, last=True, patch_locs=None, patch_size=None):
         skip = self.config.diffusion.num_diffusion_timesteps // self.args.sampling_timesteps
