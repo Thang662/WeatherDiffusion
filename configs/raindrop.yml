@@ -26,10 +26,10 @@ diffusion:
 
 training:
     patch_n: 32
-    batch_size: 2
+    batch_size: 4
     n_epochs: 5
     n_iters: 20
-    snapshot_freq: 10000
+    snapshot_freq: 1
     validation_freq: 10000
 
 sampling:
