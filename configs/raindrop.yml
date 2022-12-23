@@ -2,7 +2,7 @@ data:
     dataset: "RainDrop"
     image_size: 32
     channels: 3
-    num_workers: 4
+    num_workers: 1
     data_dir: "/kaggle/working/data/raindrop"
     conditional: True
 
@@ -26,7 +26,7 @@ diffusion:
 
 training:
     patch_n: 32
-    batch_size: 2
+    batch_size: 1
     n_epochs: 5
     n_iters: 20
     snapshot_freq: 10000
